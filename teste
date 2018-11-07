@@ -1,0 +1,44 @@
+class CaixaEletronico {
+  /* Tendo a referencia para a    conta, então o caixa eletrônico   não terá as variaveis de instância númeroDaConta, nem senha, nem saldo, nem limite. Estes campos      estarão armazenados na classe     conta! */
+  private ContaCorrente conta;
+
+  public bool login(ContaCorrente
+    conta, String senha) {
+    if (conta.ValidarSenha(senha))
+    {
+      this.conta = conta;
+    }
+  }
+
+  public bool sacar(double valor) 
+  {
+    return conta.sacar(valor);
+  }
+
+  /* 2 notas 50; 2 notas de 10*/
+
+  public bool temNotas(float valor) {
+    /* ex.: se valor 60 */
+    bool temNotas = true;
+
+    float div = (int)(valor / 100);
+    if (div > notas100) {
+      temNotas = false;
+    }
+    valor -= div * 100;
+    div =  div = (int)(valor / 50);
+    /* div = 1 */
+    if (div > notas50) {
+    {
+      temNotas = falsa;
+    } else {
+      temNotas = true;
+    }
+    valor -= div * 50;
+    /* valor = 10 */
+    
+    //por ultimo
+    if (valor > 0)
+      // então não tinha dinheiro suficiente no caixa
+  }
+}

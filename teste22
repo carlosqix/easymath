@@ -1,0 +1,7 @@
+class ContaCorrente {
+
+  /*Sem método getter (leitura)*/
+  private String senha;
+
+
+}

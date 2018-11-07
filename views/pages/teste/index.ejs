@@ -1,0 +1,26 @@
+Funcionou!?
+
+Arquivo:
+./views/pages/teste/
+      index.ejs
+
+<h1><%= titulo %></h1>
+<ul>
+  <% for(i=0; i<bandas.length; i++) { %>
+    <li>
+      <%= bandas[i] %>
+    </li>
+  <% } %>
+</ul>
+Parâmetros:
+<ul>
+  <% for(i=0; i<
+        parametros.length; i++) { %>
+    <li>
+      <%= parametros[i] %>=
+      <%= requisicao.param(
+        parametros[i]
+      ) %>
+    </li>
+  <% } %>
+</ul>
