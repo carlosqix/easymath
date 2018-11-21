@@ -1,14 +1,27 @@
 !--
 Este é o arquivo
-./views/pages/pessoa/new.ejs
+./views/pages/usuario/new.ejs
 -->
 <h1>Nova Pessoa</h1>
-<form action="/pessoa/save" method="POST">
+<form action="/usuario/save" method="POST">
+
   <input type="text" name="nome"
     placeholder="Digite o nome" />
   <br/>
-  <input type="text" name="sobrenome"
-    placeholder="Digite o sobrenome" />
+  <input type="text" name="email"
+    placeholder="Digite seu e-mail" />
+  <br/>
+  <input type="text" name="idade"
+    placeholder="Digite sua Idade" />
+  <br/>
+  <input type="text" name="cidade"
+    placeholder="Digite o nome de sua cidade" />
+  <br/>
+  <input type="text" name="estado"
+    placeholder="Digite o estado onde mora" />
+  <br/>
+  <input type="text" name="cep"
+    placeholder="Digite seu CEP" />
   <br/>
   <select name="sexo">
     <option value="">Selecione o sexo</option>
