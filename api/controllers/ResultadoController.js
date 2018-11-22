@@ -8,7 +8,7 @@
 module.exports = {
   index: function(req, res) {
     Pessoa.find().then(function(data) {
-      res.view("pages/pessoa/index",
+      res.view("pages/resultado/index",
         {
           notice: req.param("notice"),
           pessoas: data
@@ -16,7 +16,7 @@ module.exports = {
     });
   },
   new: function(req, res) {
-    res.view("pages/pessoa/new");
+    res.view("pages/resultado/new");
   },
   edit: async function(req, res) {
     var pkid = parseInt(req.param('id'))
@@ -25,14 +25,14 @@ module.exports = {
             id: pkid
         });
             if (p) {
-              res.view("pages/pessoa/edit", {
+              res.view("pages/resultado/edit", {
                 pessoa: p
               });
             } else {
-              res.redirect("/pessoa?notice=Erro.");
+              res.redirect("/resultado?notice=Erro.");
             }
     } else {
-        res.redirect("/pessoa?notice=Não encontrado.");
+        res.redirect("/resultado?notice=Não encontrado.");
     }
   },
   saveOrUpdate: function(req, res) {
@@ -48,11 +48,11 @@ module.exports = {
       }, model).exec(function(err, newmodel){
         if (!err) {
           res.redirect(
-              "/pessoa?notice=Salvo com Sucesso!"
+              "/resultado?notice=Salvo com Sucesso!"
             );
         }else {
           res.redirect(
-              "/pessoa?notice=Erro!"
+              "/resultado?notice=Erro!"
             );
         }
       });
@@ -61,7 +61,7 @@ module.exports = {
       if (!err) { // Salvou!
         console.log(newmodel);
           res.redirect(
-            "/pessoa?notice=Salvo com sucesso!"
+            "/resultado?notice=Salvo com sucesso!"
           );
       } else { // Não Salvou!
       }
@@ -75,13 +75,13 @@ module.exports = {
             id: pkid
         }).exec(function(err) {
             if (!err) {
-              res.redirect("/pessoa?notice=Removido.");
+              res.redirect("/resultado?notice=Removido.");
             } else {
-              res.redirect("/pessoa?notice=Erro.");
+              res.redirect("/resultado?notice=Erro.");
             }
         });
     } else {
-        res.redirect("/pessoa?notice=Não encontrado.");
+        res.redirect("/resultado?notice=Não encontrado.");
     }
   }
 
