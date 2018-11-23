@@ -1,4 +1,4 @@
-<!--
+﻿<!--
 Este é o arquivo
 ./views/pages/pessoa/index.ejs
 -->
@@ -8,6 +8,7 @@ Este é o arquivo
     <th>Nome</th>
     <th>Sobrenome</th>
     <th>Sexo</th>
+    <th>Data de Nascimento</th>	
     <th>Ações</th>
   </tr>
   <% for (i = 0; i< pessoas.length; i++) { %>
@@ -15,6 +16,7 @@ Este é o arquivo
     <td><%= pessoas[i].nome %> </td>
     <td><%= pessoas[i].sobrenome %> </td>
     <td><%= pessoas[i].sexo %> </td>
+    <td><%= pessoas[i].data %></td>
     <td>
       <a href="/pessoa/edit/<%= pessoas[i].id %>">Editar</a>
       <a href="/pessoa/delete/<%= pessoas[i].id %>" 

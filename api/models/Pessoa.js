@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Pessoa.js
  *
  * @description :: A model definition.  Represents a database table/collection/etc.
@@ -21,6 +21,11 @@ module.exports = {
       required:true,
       minLength: 2
     },
+	data: {
+	type:"date",
+	required:true,
+	minLength:2
+},
     sexo: {
       type:"string", 
       required:true,
