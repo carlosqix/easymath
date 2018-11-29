@@ -21,7 +21,7 @@ module.exports = {
       required:true,
       minLength: 2
     },
-	data: { type: 'string', columnType: 'date' }
+	data: { type: 'string', columnType: 'date' 
 
 },
     sexo: {
