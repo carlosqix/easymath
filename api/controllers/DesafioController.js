@@ -1,5 +1,5 @@
-/**
- * PessoaController
+﻿/**
+ * DesafioController
  *
  * @description :: Server-side actions for handling incoming requests.
  * @help        :: See https://sailsjs.com/docs/concepts/actions
@@ -7,32 +7,32 @@
 
 module.exports = {
   index: function(req, res) {
-    Pessoa.find().then(function(data) {
-      res.view("pages/pessoa/index",
+    Desafio.find().then(function(data) {
+      res.view("pages/desafio/index",
         {
           notice: req.param("notice"),
-          pessoas: data
+          desafios: data
         });
     });
   },
   new: function(req, res) {
-    res.view("pages/pessoa/new");
+    res.view("pages/desafio/new");
   },
   edit: async function(req, res) {
     var pkid = parseInt(req.param('id'))
     if (pkid && !isNaN(pkid)) {
-        var p = await Pessoa.findOne({
+        var p = await Desafio.findOne({
             id: pkid
         });
             if (p) {
-              res.view("pages/pessoa/edit", {
+              res.view("pages/desafio/edit", {
                 pessoa: p
               });
             } else {
-              res.redirect("/pessoa?notice=Erro.");
+              res.redirect("/desafio?notice=Erro.");
             }
     } else {
-        res.redirect("/pessoa?notice=Não encontrado.");
+        res.redirect("/desafio?notice=Não encontrado.");
     }
   },
   saveOrUpdate: function(req, res) {
@@ -43,25 +43,25 @@ module.exports = {
       sexo: req.param("sexo")
     }
     if (pkid > 0){
-      Pessoa.update({
+      Desafio.update({
         id: pkid
       }, model).exec(function(err, newmodel){
         if (!err) {
           res.redirect(
-              "/pessoa?notice=Salvo com Sucesso!"
+              "/desafio?notice=Salvo com Sucesso!"
             );
         }else {
           res.redirect(
-              "/pessoa?notice=Erro!"
+              "/desafio?notice=Erro!"
             );
         }
       });
   } else{
-    Pessoa.create(model).exec(function(err, newmodel) {
+    Desafio.create(model).exec(function(err, newmodel) {
       if (!err) { // Salvou!
         console.log(newmodel);
           res.redirect(
-            "/pessoa?notice=Salvo com sucesso!"
+            "/desafio?notice=Salvo com sucesso!"
           );
       } else { // Não Salvou!
       }
@@ -71,17 +71,17 @@ module.exports = {
   delete: async function(req, res) {
     var pkid = parseInt(req.param('id'))
     if (pkid && !isNaN(pkid)) {
-        Pessoa.destroy({
+        Desafio.destroy({
             id: pkid
         }).exec(function(err) {
             if (!err) {
-              res.redirect("/pessoa?notice=Removido.");
+              res.redirect("/desafio?notice=Removido.");
             } else {
-              res.redirect("/pessoa?notice=Erro.");
+              res.redirect("/desafio?notice=Erro.");
             }
         });
     } else {
-        res.redirect("/pessoa?notice=Não encontrado.");
+        res.redirect("/desafio?notice=Não encontrado.");
     }
   }
 
