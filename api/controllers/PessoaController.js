@@ -1,4 +1,4 @@
-/**
+﻿/**
  * PessoaController
  *
  * @description :: Server-side actions for handling incoming requests.
@@ -11,7 +11,7 @@ module.exports = {
       res.view("pages/pessoa/index",
         {
           notice: req.param("notice"),
-          pessoas: data
+          pessoas: date
         });
     });
   },
