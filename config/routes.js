@@ -46,8 +46,10 @@ module.exports.routes = {
   'GET /pessoa/delete/:id':
         { action: "pessoa/delete" },
   'GET /pessoa/edit/:id':
-        { action: "desafio/edit" },
- 'GET /desafio':      
+        { action: "/edit" },
+ 'GET /pessoa':  
+
+    
         { action: "desafio/index" },
   'GET /desafio/new':
         { action: "desafio/new" },
