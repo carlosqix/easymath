@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Route Mappings
  * (sails.config.routes)
  *
@@ -46,7 +46,19 @@ module.exports.routes = {
   'GET /pessoa/delete/:id':
         { action: "pessoa/delete" },
   'GET /pessoa/edit/:id':
-        { action: "pessoa/edit" },
+        { action: "/edit" },
+ 'GET /pessoa':  
+
+    
+        { action: "desafio/index" },
+  'GET /desafio/new':
+        { action: "desafio/new" },
+  'POST /pessoa/save':
+        { action: "desafio/saveOrUpdate"},
+  'GET /pessoa/delete/:id':
+        { action: "desafio/delete" },
+  'GET /pessoa/edit/:id':
+        { action: "desafio/edit" },
 
   //  ╔═╗╔═╗╦  ╔═╗╔╗╔╔╦╗╔═╗╔═╗╦╔╗╔╔╦╗╔═╗
   //  ╠═╣╠═╝║  ║╣ ║║║ ║║╠═╝║ ║║║║║ ║ ╚═╗
